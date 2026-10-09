@@ -886,3 +886,8 @@ if __name__ == '__main__':
     port = int(os.environ.get("PORT", 8082))
     print(f"Yoho Cloud Enterprise Sunucusu {port} portunda başlatılıyor...")
     socketio.run(app, host='0.0.0.0', port=port, allow_unsafe_werkzeug=True)
+
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
