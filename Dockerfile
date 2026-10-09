@@ -1,6 +1,7 @@
-FROM python:3.9-slim
+FROM node:18-alpine
 WORKDIR /app
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+COPY package*.json ./
+RUN npm install
 COPY . .
-CMD ["python", "yoho_app.py"]
+EXPOSE 10000
+CMD ["node", "server.js"]
